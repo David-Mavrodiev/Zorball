@@ -51,8 +51,6 @@ class GameScene: SKScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch: AnyObject in touches{
-            /*let positionInScene = [touch .location(in: spriteNode)]
-            fl*/
             let currentPoint = (touch as! UITouch).location(in: self.view)
             let distance = currentPoint.x - previousPoint.x
             previousPoint = currentPoint
