@@ -15,6 +15,9 @@
 		638F38C81E8B33D200503CF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638F38C61E8B33D200503CF9 /* Main.storyboard */; };
 		638F38CA1E8B33D300503CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F38C91E8B33D300503CF9 /* Assets.xcassets */; };
 		638F38CD1E8B33D300503CF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638F38CB1E8B33D300503CF9 /* LaunchScreen.storyboard */; };
+		639F691E1E8C4AAD00091ED5 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 639F691D1E8C4AAD00091ED5 /* spark.png */; };
+		639F69201E8C4AD200091ED5 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 639F691F1E8C4AD200091ED5 /* Spark.sks */; };
+		63EB08D91E8C52CF00A43139 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 63EB08D81E8C52CF00A43139 /* Fire.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		638F38C91E8B33D300503CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		638F38CC1E8B33D300503CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		638F38CE1E8B33D300503CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639F691D1E8C4AAD00091ED5 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		639F691F1E8C4AD200091ED5 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		63EB08D81E8C52CF00A43139 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 		638F38BB1E8B33D000503CF9 /* Zorball */ = {
 			isa = PBXGroup;
 			children = (
+				63EB08D81E8C52CF00A43139 /* Fire.sks */,
+				639F691F1E8C4AD200091ED5 /* Spark.sks */,
+				639F691D1E8C4AAD00091ED5 /* spark.png */,
 				638F38BC1E8B33D100503CF9 /* AppDelegate.swift */,
 				638F38BE1E8B33D100503CF9 /* GameScene.sks */,
 				638F38C01E8B33D200503CF9 /* Actions.sks */,
@@ -133,8 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				638F38C81E8B33D200503CF9 /* Main.storyboard in Resources */,
+				639F691E1E8C4AAD00091ED5 /* spark.png in Resources */,
 				638F38BF1E8B33D100503CF9 /* GameScene.sks in Resources */,
+				639F69201E8C4AD200091ED5 /* Spark.sks in Resources */,
 				638F38CA1E8B33D300503CF9 /* Assets.xcassets in Resources */,
+				63EB08D91E8C52CF00A43139 /* Fire.sks in Resources */,
 				638F38CD1E8B33D300503CF9 /* LaunchScreen.storyboard in Resources */,
 				638F38C11E8B33D200503CF9 /* Actions.sks in Resources */,
 			);
@@ -313,6 +325,7 @@
 				638F38D31E8B33D300503CF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
