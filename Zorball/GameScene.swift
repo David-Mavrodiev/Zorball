@@ -10,68 +10,45 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
-    var previousPoint : CGPoint!
-    let spriteNode = SKSpriteNode()
-    
-    
+    let  playButton = SKSpriteNode(imageNamed: "PlayButton")
     override func didMove(to view: SKView) {
-        let screen = SKEmitterNode(fileNamed: "Spark")
-        screen?.position = CGPoint(x: 0, y: 400)
-        self.addChild(screen!)
+        let background = SKSpriteNode(imageNamed: "MenuImageSet")
+        background.size = self.size
+        background.position = CGPoint(x: 0, y: 0)
+        background.zPosition = 10;
+        self.addChild(background)
         
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
-        let range = 1..<5
-        for i in range{
-            let fireNode = SKSpriteNode(fileNamed: "Fire")
-            fireNode?.size = CGSize(width: 1250, height: 30)
-            fireNode?.position = CGPoint(x: -450 + (i * 180), y: -700)
-            self.addChild(fireNode!)
-        }
+        AddGameLabel(title: "Zorball", position: CGPoint(x: 0, y: self.size.height * 0.25),
+                     color: SKColor.white, fontSize: 150)
+        AddGameLabel(title: "View Stats", position: CGPoint(x: 0, y: self.size.height * -0.20), color: SKColor.red, fontSize: 80)
         
-        let sceneBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        sceneBody.friction = 0
-        self.physicsBody = sceneBody
-        
-        
-        spriteNode.color = SKColor.red
-        spriteNode.size = CGSize(width: 250, height: 20)
-        spriteNode.position = CGPoint(x: 20, y: -350)
-        spriteNode.physicsBody = SKPhysicsBody(rectangleOf: spriteNode.size)
-        spriteNode.physicsBody?.affectedByGravity = false
-        spriteNode.physicsBody?.isDynamic = false
-        self.addChild(spriteNode)
-        
-        let rotateAction = SKAction.rotate(byAngle: 1, duration: 10)
-        spriteNode.run(SKAction.repeatForever(rotateAction))
+       
+        playButton.size = CGSize(width: self.size.width * 0.5, height: self.size.height * 0.10)
+        playButton.position = CGPoint(x: 0, y: 0)
+        playButton.zPosition = 11
+        playButton.name = "Play"
+        self.addChild(playButton)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch: AnyObject in touches{
-            previousPoint = (touch as! UITouch).location(in: self.view)
-        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch: AnyObject in touches{
-            let currentPoint = (touch as! UITouch).location(in: self.view)
-            let distance = currentPoint.x - previousPoint.x
-            previousPoint = currentPoint
-            spriteNode.zRotation = spriteNode.zRotation + distance / 100.0
-        }
+    func AddGameLabel(title: String, position: CGPoint, color: SKColor, fontSize: Int) {
+        let label = SKLabelNode(fontNamed: "Chalkduster")
+        label.text = title
+        label.color = color
+        label.zPosition = 11
+        label.fontSize = CGFloat(fontSize)
+        label.position = position
+        self.addChild(label)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         for touch: AnyObject in touches{
-            //let positionOfTouch = touch.location(in: self)
-            let ball = SKShapeNode(circleOfRadius: 35)
-            ball.fillColor = SKColor.red
-            ball.position = CGPoint(x: 0, y: 400)
-            ball.physicsBody = SKPhysicsBody(circleOfRadius: 35)
-            ball.physicsBody?.affectedByGravity = true
-            ball.physicsBody?.restitution = 1
-            ball.physicsBody?.linearDamping = 0
-            self.addChild(ball)
+            let touchLocation = touch.location(in: self)
+            if playButton.contains(touchLocation){
+                let reveal = SKTransition.doorsOpenHorizontal(withDuration: 1)
+                let letsPlay = HomeScene(size: self.size)
+                self.view?.presentScene(letsPlay, transition: reveal)
+            }
         }
     }
 }
