@@ -12,6 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     let  playButton = SKSpriteNode(imageNamed: "PlayButton")
     override func didMove(to view: SKView) {
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let background = SKSpriteNode(imageNamed: "MenuImageSet")
         background.size = self.size
         background.position = CGPoint(x: 0, y: 0)
