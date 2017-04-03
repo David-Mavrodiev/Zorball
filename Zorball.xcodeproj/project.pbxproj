@@ -18,6 +18,7 @@
 		63948AC51E8D577200D76762 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63948AC41E8D577200D76762 /* HomeScene.swift */; };
 		639F691E1E8C4AAD00091ED5 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 639F691D1E8C4AAD00091ED5 /* spark.png */; };
 		639F69201E8C4AD200091ED5 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 639F691F1E8C4AD200091ED5 /* Spark.sks */; };
+		63D653001E91F32D00804409 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 63D652FF1E91F32D00804409 /* Explosion.sks */; };
 		63EB08D91E8C52CF00A43139 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 63EB08D81E8C52CF00A43139 /* Fire.sks */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		63948AC41E8D577200D76762 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		639F691D1E8C4AAD00091ED5 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		639F691F1E8C4AD200091ED5 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		63D652FF1E91F32D00804409 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		63EB08D81E8C52CF00A43139 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 		638F38BB1E8B33D000503CF9 /* Zorball */ = {
 			isa = PBXGroup;
 			children = (
+				63D652FF1E91F32D00804409 /* Explosion.sks */,
 				63EB08D81E8C52CF00A43139 /* Fire.sks */,
 				639F691F1E8C4AD200091ED5 /* Spark.sks */,
 				639F691D1E8C4AAD00091ED5 /* spark.png */,
@@ -152,6 +155,7 @@
 				63EB08D91E8C52CF00A43139 /* Fire.sks in Resources */,
 				638F38CD1E8B33D300503CF9 /* LaunchScreen.storyboard in Resources */,
 				638F38C11E8B33D200503CF9 /* Actions.sks in Resources */,
+				63D653001E91F32D00804409 /* Explosion.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
