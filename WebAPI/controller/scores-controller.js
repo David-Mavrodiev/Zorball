@@ -9,9 +9,9 @@ module.exports = function(scoresData, cookieText) {
                     let returnedString = ""
                     for(let i = 0; i < scores.length; i++){
                         if(i == scores.length - 1){
-                            returnedString += "" + scores[i].date + "," + scores[i].points + ""
+                            returnedString += "Date: " + scores[i].date + ", Points: " + scores[i].points + ""
                         }else{
-                            returnedString += "" + scores[i].date + "," + scores[i].points + ";"
+                            returnedString += "Date: " + scores[i].date + ", Points: " + scores[i].points + ";"
                         }
                     }
                     res.send(returnedString)
