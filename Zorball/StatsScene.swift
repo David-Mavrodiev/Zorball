@@ -14,13 +14,15 @@ class StatsScene: SKScene{
         addGameLabel(title: "Top 5 scores", position: CGPoint(x: self.size.width / 2, y: self.size.height * 0.95), color: SKColor.white, fontSize: 100, name: "Title")
         
         self.getTopScores()
+        
+        addGameLabel(title: "<-Return", position: CGPoint(x: self.size.width / 2, y: self.size.height * 0.20), color: SKColor.white, fontSize: 80, name: "Return")
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch: AnyObject in touches{
             let touchLocation = touch.location(in: self)
-            if (self.childNode(withName: "Title")?.contains(touchLocation))!{
+            if (self.childNode(withName: "Return")?.contains(touchLocation))!{
                 let reveal = SKTransition.doorsOpenHorizontal(withDuration: 1)
                 let letsPlay = GameScene(size: self.size)
                 self.view?.presentScene(letsPlay, transition: reveal)
@@ -64,6 +66,14 @@ class StatsScene: SKScene{
             
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
+            
+            let array = responseString?.components(separatedBy: ";")
+            var height = 0.75
+            for res in array!{
+                self.addGameLabel(title: res, position: CGPoint(x: self.size.width / 2, y: self.size.height * CGFloat(height))
+                    , color: SKColor.red, fontSize: 50, name: "None")
+                height = height - 0.10
+            }
         }
         task.resume()
     }    
