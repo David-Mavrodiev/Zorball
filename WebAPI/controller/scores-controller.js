@@ -6,7 +6,15 @@ module.exports = function(scoresData, cookieText) {
             console.log("Getting top 5 scores...")
             if(req.body.cookieText == cookieText){
                 scoresData.findTop().then((scores) => {
-                    res.send(scores)
+                    let returnedString = ""
+                    for(let i = 0; i < scores.length; i++){
+                        if(i == scores.length - 1){
+                            returnedString += "" + scores[i].date + "," + scores[i].points + ""
+                        }else{
+                            returnedString += "" + scores[i].date + "," + scores[i].points + ";"
+                        }
+                    }
+                    res.send(returnedString)
                 });
             }else{
                 res.status(401).send("Not authorized!")
