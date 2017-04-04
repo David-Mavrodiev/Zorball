@@ -25,6 +25,8 @@ class GameScene: SKScene {
         
         addGameLabel(title: "View Stats", position: CGPoint(x: 0, y: self.size.height * -0.20), color: SKColor.red, fontSize: 80, name: "GameStats")
         
+        addGameLabel(title: "My Best score: " + getScoreLocal(), position: CGPoint(x: 0, y: self.size.height * -0.35), color: SKColor.red, fontSize: 50, name: "MyBestScore")
+        
         self.setupPlayButton()
     }
     
@@ -47,6 +49,15 @@ class GameScene: SKScene {
     }
     
     /* Custom setup methods */
+    
+    func getScoreLocal() -> String{
+        let savedValue = UserDefaults.standard.string(forKey: "HighScore")
+        if savedValue == nil{
+            return "0"
+        }else{
+          return savedValue!
+        }
+    }
     
     func setupBackground(){
         let background = SKSpriteNode(imageNamed: "MenuImageSet")

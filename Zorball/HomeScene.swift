@@ -196,6 +196,9 @@ class HomeScene: SKScene,SKPhysicsContactDelegate{
                 
                 //Send score
                 self.sendScore(points: self.scoreNumber)
+                
+                //Save score local
+                self.saveScoreLocal(scoreValue: self.scoreNumber)
             }
             
             self.addChild(bomb!)
@@ -206,6 +209,19 @@ class HomeScene: SKScene,SKPhysicsContactDelegate{
     }
     
     /* ----- Custom setup methods ----- */
+    
+    func saveScoreLocal(scoreValue: Int){
+        if let savedValue = UserDefaults.standard.string(forKey: "HighScore") {
+            if Int(savedValue)! < Int(scoreValue){
+                let valueToSave = String(describing: scoreValue)
+                UserDefaults.standard.set(valueToSave, forKey: "HighScore")
+            }
+        }else{
+            let valueToSave = String(describing: scoreValue)
+            UserDefaults.standard.set(valueToSave, forKey: "HighScore")
+        }
+        
+    }
     
     func sendScore(points: Int){
         var request = URLRequest(url: URL(string: "https://zorball.herokuapp.com/scores/add")!)
