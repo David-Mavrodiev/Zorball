@@ -64,14 +64,6 @@ class StatsScene: SKScene{
             
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
-            
-            var jsonObjectArray = JSON(responseString).array!
-            var swiftArray = []
-            for jsonObject in jsonObjectArray {
-                var swiftObject = SwiftObject()
-                swiftObject.propetyName = jsonObject["propertyName"].string!
-                swiftArry.append(swiftObject)
-            }
         }
         task.resume()
     }    
