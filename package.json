@@ -1,0 +1,22 @@
+{
+  "name": "zorball",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+      "start": "node WebAPI/app.js"
+  },
+  "author": "David-Mavrodiev",
+  "license": "ISC",
+  "dependencies": {
+        "body-parser": "^1.15.2",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.14.0",
+        "express-session": "^1.14.2",
+        "mongoose": "^4.7.0"
+    },
+    "engines": {
+        "node": "6.7.0",
+        "npm": "3.7.0"
+    }
+}
